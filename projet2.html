@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Projet - Station Météo Connectée</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #333; line-height: 1.6; }
+    nav {
+      background: #ffffff;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav h1 {
+      font-size: 1.8rem;
+      color: #0277bd;
+    }
+    nav a {
+      color: #333;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #0277bd;
+    }
+    section {
+      padding: 80px 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+    .components, .objectives {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #f7f7f7;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #eeeeee;
+      color: #555;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Station Météo</h1>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="donnees.html">Données</a>
+      <a href="projet.html">Le Projet</a>
+    </div>
+  </nav>
+
+  <section>
+    <img src="patate.jpg" alt="Photo du projet" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 40px;">
+    <h2 class="section-title">Présentation du Projet</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">
+      Dans le cadre de notre année de Terminale STI2D, nous avons réalisé un projet technique : une station météo connectée.
+      Celle-ci permet de recueillir et d’afficher des données environnementales comme la température, l’humidité, ou encore la pression.
+      Le but ? Mieux comprendre notre environnement tout en développant nos compétences techniques.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Les Composants Utilisés</h2>
+    <div class="components">
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/arduino.png" alt="Arduino">
+        <h3>Carte Arduino Uno</h3>
+        <p>Le cœur du système, elle collecte et traite les données des capteurs.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/thermometer.png" alt="Température">
+        <h3>Capteurs</h3>
+        <p>DHT11 pour l'humidité et la température, capteurs de pression et de vent.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/monitor--v1.png" alt="Affichage">
+        <h3>Écran LCD</h3>
+        <p>Affiche en temps réel les données météorologiques mesurées par la station.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Les Objectifs du Projet</h2>
+    <div class="objectives">
+      <div class="card">
+        <h3>Technologie</h3>
+        <p>Maîtriser l’utilisation d’une carte Arduino et l’intégration de plusieurs capteurs.</p>
+      </div>
+      <div class="card">
+        <h3>Transmission</h3>
+        <p>Créer une interface web pour rendre les données météo accessibles à tous.</p>
+      </div>
+      <div class="card">
+        <h3>Écologie</h3>
+        <p>Réfléchir à des solutions durables en lien avec l’environnement local.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Conclusion</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">
+      Ce projet nous a permis de découvrir la programmation embarquée, le traitement de données et le développement web. C’est une belle synthèse de notre parcours en STI2D, mêlant pratique, théorie et travail d’équipe.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Station Météo Connectée • Salembier Luke & Papin Rodolphe</p>
+  </footer>
+</body>
+</html>

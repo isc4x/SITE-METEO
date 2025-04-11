@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Projet</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #fff8e1, #ffffff);
+      animation: fadeIn 1.2s ease-in;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: #ff8f00;
+    }
+    .content-box {
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .parallax {
+      background-image: url('blud.jpg');
+      height: 180px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 30px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fermer &times;</button>
+  <a href="index.html" class="w3-bar-item w3-button">Accueil</a>
+  <a href="donnees.html" class="w3-bar-item w3-button">Données météo</a>
+  <a href="projet.html" class="w3-bar-item w3-button">Le projet</a>
+</div>
+
+<div class="w3-orange">
+  <button class="w3-button w3-orange w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Le Projet</h1>
+  </div>
+</div>
+
+<div class="parallax"></div>
+
+<div class="content-box">
+  <h2>Une station météo connectée et durable</h2>
+  <p>
+    Notre station météo a été conçue pour relever et transmettre en temps réel plusieurs données environnementales.
+    Elle est équipée de plusieurs capteurs connectés à une carte Arduino Uno via un shield Grove :
+  </p>
+  <ul>
+    <li>Capteur de température et d'humidité (DHT11)</li>
+    <li>Capteur de pression et altitude (MPL3115A2)</li>
+    <li>Capteur de luminosité</li>
+    <li>Anémomètre et girouette pour le vent</li>
+    <li>Pluviomètre pour les précipitations</li>
+  </ul>
+  <p>
+    Toutes les données sont affichées sur un écran LCD RGB, et transmises pour être consultables via ce site web et une application mobile.
+    Le projet s'inscrit dans une démarche durable, en réduisant la consommation et en utilisant l'énergie solaire.
+  </p>
+  <p>
+    Le développement du site a été réalisé par <strong>Salembier Luke</strong> et <strong>Papin Rodolphe</strong> dans le cadre du baccalauréat STI2D.
+  </p>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>

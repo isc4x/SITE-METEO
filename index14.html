@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Station Météo Connectée</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #333; line-height: 1.6; }
+    nav {
+      background: #ffffff;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav h1 {
+      font-size: 1.8rem;
+      color: #0277bd;
+    }
+    nav a {
+      color: #333;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #0277bd;
+    }
+    .hero {
+      background: url('blud.jpg') center center / cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; max-width: 700px; }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #0277bd;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #01579b;
+    }
+    section {
+      padding: 80px 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+    .features, .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .feature, .step {
+      background: #f7f7f7;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      background-color: #e0f7fa;
+    }
+    .feature img, .step img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #eeeeee;
+      color: #555;
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background: #0277bd;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .horodatage {
+      text-align: center;
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .horodatage img {
+      width: 70px;
+      margin-bottom: 10px;
+    }
+    .horodatage p {
+      font-size: 1.3em;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body onload="afficherDate(); afficherHeure();">
+  <nav>
+    <h1>Station Météo</h1>
+    <div>
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="accueil">
+    <h2>Notre projet météo</h2>
+    <p>Une station durable et innovante pour capter les conditions météo locales avec précision.</p>
+    <a class="btn" href="#apropos">En savoir plus</a>
+  </header>
+
+  <section id="services">
+    <h2 class="section-title">Données météo fiables</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/temperature.png" alt="Température">
+        <h3>Température</h3>
+        <p>Obtenez des relevés précis de la température ambiante.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/hygrometer.png" alt="Humidité">
+        <h3>Humidité</h3>
+        <p>Mesurez l'humidité relative pour une meilleure analyse du climat.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/color/96/barometer.png" alt="Pression">
+        <h3>Pression</h3>
+        <p>Suivez les variations de pression atmosphérique avec notre capteur barométrique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnement">
+    <h2 class="section-title">Comment ça marche ?</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://img.icons8.com/color/96/clouds.png" alt="Collecte">
+        <h3>Collecte des données</h3>
+        <p>Les capteurs mesurent les données météo en temps réel directement depuis notre station connectée.</p>
+      </div>
+      <div class="step">
+        <img src="https://img.icons8.com/color/96/monitor.png" alt="Affichage">
+        <h3>Affichage instantané</h3>
+        <p>Les valeurs sont affichées sur un écran LCD et accessibles en ligne via le site web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos">
+  <h2 class="section-title">À propos de nous</h2>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
+    <div style="flex: 1 1 350px; text-align: center;">
+      <p style="max-width: 600px; margin: auto;">Nous sommes deux étudiants de Terminale STI2D passionnés par la technologie, l’environnement et le numérique. Ce projet a pour objectif de proposer une solution météo locale connectée, à la fois éducative et écologique.</p>
+    </div>
+    <div style="flex: 1 1 300px; text-align: center;">
+      <img src="pafluke.png" alt="Photo de l'équipe" style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</section>
+
+  <section class="horodatage">
+    <img src="horloge.png" alt="Horloge">
+    <h2>Horodatage en temps réel</h2>
+    <p>📅 <strong id="dateActuelle">--/--/----</strong></p>
+    <p>🕒 <strong id="heureActuelle">--:--:--</strong></p>
+    <p style="font-size: 0.8em; color: #666;">Dernière mise à jour automatique toutes les secondes ⏱️</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Votre nom">
+      <input type="email" placeholder="Votre e-mail">
+      <textarea rows="5" placeholder="Votre message..."></textarea>
+      <button>Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Station Météo Connectée • Salembier Luke & Papin Rodolphe</p>
+  </footer>
+
+  <script>
+    function afficherDate() {
+      const aujourdHui = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("dateActuelle").textContent = aujourdHui.toLocaleDateString('fr-FR', options);
+    }
+    function afficherHeure() {
+      setInterval(() => {
+        const maintenant = new Date();
+        const heures = String(maintenant.getHours()).padStart(2, '0');
+        const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+        const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+        document.getElementById("heureActuelle").textContent = `${heures}:${minutes}:${secondes}`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
